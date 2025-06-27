@@ -6,7 +6,50 @@
 // git remote add origin https://github.com/basterricalucas/evaluacionbasterricavivas.git 
 // 4 creamos un nuevo archivo y realizamos cambios
 // 5 agregamos los cambios al area de preparación
-//: git add
+//: git add .
 // 6 realiza un commit de los cambios
 // : git commit -m "descripción de los cambios"
 // 7 sube los cambios a github: git push -u origin master
+
+let sapos = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]; //array de los 10 sapos
+let winner = 0;
+
+function crearSapos() {
+    for (let i = 0; i < sapos.length; i++) {
+        sapos[i] = Math.floor(Math.random()*16)+5;
+
+ 
+        }
+    }
+
+function saltarSapos() {
+       do {
+         for (let i = 0; i < sapos.length; i++) {
+        sapos[i] += Math.floor(Math.random()*16)+5;
+        if (sapos[i] >= 80) {
+            winner = sapos[i];
+        console.log(" el sapo en la posicion " + winner + " es el ganador");
+        }
+           
+        }
+        
+       
+         }
+           while (winner != 80)
+        
+        
+        }
+      
+    
+
+
+function mostrarSapos() {
+    console.log(sapos);
+    
+    
+}
+
+
+crearSapos();
+saltarSapos();
+mostrarSapos();
