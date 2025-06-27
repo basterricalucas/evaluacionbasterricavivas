@@ -12,11 +12,11 @@
 // 7 sube los cambios a github: git push -u origin master
 
 let sapos = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]; //array de los 10 sapos
-let winner = 0;
+let winner = -1;
 
 function crearSapos() {
     for (let i = 0; i < sapos.length; i++) {
-        sapos[i] = Math.floor(Math.random()*16)+5;
+        sapos[i] += Math.floor(Math.random()*16)+5;
 
  
         }
@@ -25,20 +25,21 @@ function crearSapos() {
 function saltarSapos() {
        do {
          for (let i = 0; i < sapos.length; i++) {
-        sapos[i] += Math.floor(Math.random()*16)+5;
+        sapos[i] = Math.floor(Math.random()*16)+5;
+
         if (sapos[i] >= 80) {
-            winner = sapos[i];
+            winner = i;
         console.log(" el sapo en la posicion " + winner + " es el ganador");
         }
            
         }
         
-       
-         }
-           while (winner != 80)
+        }   
+         
+           while (winner === -1)
         
-        
-        }
+           
+    }
       
     
 
